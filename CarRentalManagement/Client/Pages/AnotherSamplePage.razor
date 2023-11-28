@@ -1,0 +1,44 @@
+﻿@page "/anothersamplepage"
+@using System.Timers
+@implements IDisposable
+
+<PageTitle>Another sample page</PageTitle>
+
+<h1>Another Sample Page</h1>
+<p>This page has been made solely for the purpose of testing various bits of code.
+    A <span style="color:#60C060">line break</span> was inserted between these sentences within the code.
+    This, however, does not add a line break within the front-end itself.<br />
+    A line break has now been added.<br />
+    <span style="color:#FF0000">Access denied!</span><br />
+    Copyright 2023 Event<span style="color:#60C060">Meet</span> Pte Ltd. All rights reserved
+</p>
+<p>The current time is @currentTime</p>
+
+@code { // from StackOverflow
+    private string currentTime = DateTime.Now.ToString("HH:mm:ss");
+
+    private Timer? secondsTimer;
+
+    protected override void OnInitialized()
+    {
+        //one second interval
+        secondsTimer = new Timer(1000);
+        secondsTimer.Enabled = true;
+        secondsTimer.AutoReset = true;
+        secondsTimer.Elapsed += (sender, e) => UpdateTime();
+    }
+
+    private void UpdateTime()
+    {
+        currentTime = DateTime.Now.ToString("HH:mm:ss");
+        InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        secondsTimer?.Dispose();
+    }
+}

@@ -17,46 +17,51 @@
             <Authorized>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                        <span class="oi oi-person" aria-hidden="true"></span> Hello @context.User.Identity?.Name!
+                        <span style="color:#000000" class="oi oi-person" aria-hidden="true"></span> <span style="color:#408000">@context.User.Identity?.Name</span>
                     </NavLink>
                 </div>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="#" @onclick="BeginLogOut" Match="NavLinkMatch.All">
-                        <span class="oi oi-account-logout" aria-hidden="true"></span> Log out
+                        <span style="color:#000000" class="oi oi-account-logout" aria-hidden="true"></span> <span style="color:#408000">Register</span>
                     </NavLink>
                 </div>
             </Authorized>
             <NotAuthorized>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="authentication/register" Match="NavLinkMatch.All">
-                        <span class="oi oi-person" aria-hidden="true"></span> Register
+                        <span style="color:#000000" class="oi oi-person" aria-hidden="true"></span> <span style="color:#408000">Register</span>
                     </NavLink>
                 </div>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="authentication/login" Match="NavLinkMatch.All">
-                        <span class="oi oi-account-login" aria-hidden="true"></span> Log in
+                        <span style="color:#000000" class="oi oi-account-login" aria-hidden="true"></span> <span style="color:#408000">Log in</span>
                     </NavLink>
                 </div>
             </NotAuthorized>
         </AuthorizeView>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <span style="color:#000000" class="oi oi-home" aria-hidden="true"></span> <span style="color:#408000">Home</span>
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                <span style="color:#000000" class="oi oi-plus" aria-hidden="true"></span> <span style="color:#408000">Counter</span>
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="SamplePage">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Sample page
+            <NavLink class="nav-link" href="samplepage">
+                <span style="color:#000000" class="oi oi-list-rich" aria-hidden="true"></span> <span style="color:#408000">Sample page</span>
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="anothersamplepage">
+                <span style="color:#000000" class="oi oi-list-rich" aria-hidden="true"></span> <span style="color:#408000">Another sample page</span>
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+                <span style="color:#000000" class="oi oi-list-rich" aria-hidden="true"></span> <span style="color:#408000">Fetch data</span>
             </NavLink>
         </div>
     </nav>

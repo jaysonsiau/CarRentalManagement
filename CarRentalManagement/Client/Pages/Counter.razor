@@ -6,16 +6,19 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Clickable button</button>
+<p><br />@cannotComplyMessage</p>
 
 @code {
     private int currentCount = 0;
-    private string[] cannotComplyArr = {"That won't work.","You are not ready.","Impossible!","User used click. It's not very effective."};
+    private string? cannotComplyMessage;
+    private string[] cannotComplyArr = {"That won't work.","You are not ready.","Impossible!","User used click. It's not very effective.","Cannot comply.","You cannot pass!"};
 
     private void IncrementCount()
     {
-        Console.WriteLine(cannotComplyArr[currentCount]);
-        if (currentCount >= 3) currentCount = 0;
+        cannotComplyMessage = cannotComplyArr[currentCount];
+        Console.WriteLine(cannotComplyMessage);
+        if (currentCount >= 5) currentCount = 0;
         else currentCount++;
         
     }
